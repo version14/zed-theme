@@ -1,0 +1,10 @@
+id = "version14-theme"
+name = "Version 14"
+version = "0.1.0"
+schema_version = 1
+authors = ["Mathieu Souflis <contact@mathieusouflis.com>"]
+description = "Dark and light themes for Zed, inspired by the Version 14 brand palette."
+repository = "https://github.com/version14/zed-theme"
+
+[themes]
+"themes/version14.json" = { name = "Version 14" }
