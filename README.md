@@ -1,24 +1,23 @@
 # Version 14 Theme for Zed
 
-A clean dark and light theme for [Zed](https://zed.dev), built around the **Version 14** brand palette — high-contrast accents on deep neutrals.
+A dark and light theme for [Zed](https://zed.dev), built around the Version 14 brand palette: high contrast accents on deep neutrals.
 
 ## Variants
 
 | Variant | Description |
 |---|---|
-| **Version 14 Dark** | Deep dark backgrounds with a violet accent (`#B7A2FF`) — see note on the accent color below |
-| **Version 14 Black** | Pure black backgrounds (`#000000`) with the same violet accent — ideal for OLED displays |
+| **Version 14 Dark** | Deep dark backgrounds with a violet accent (`#B7A2FF`) |
+| **Version 14 Black** | Pure black backgrounds (`#000000`) with the same violet accent, for OLED displays |
 | **Version 14 Light** | Bright neutral surfaces with a violet accent (`#5F3BBB`) |
 
-> **v0.4.0 note:** this release replaces the previous signature lime-green accent (`#D2FF3A`) with a violet hue and adds a 4-step elevation/text contrast grade to all three variants (see `color-palette.md` in [`version14-themes`](https://github.com/version14) for the full rationale). **The violet accent hue is a placeholder**, not final — it will change again in a future release once a permanent replacement hue is chosen. Everything else about the grade (lightness/chroma, contrast ratios) is stable regardless of which hue eventually lands there.
+> The violet accent is a placeholder hue. It replaces a retired lime green accent and will change again once a permanent hue is chosen. The rest of the palette (lightness, chroma, contrast ratios) is stable.
 
 ## Installation
 
-1. Open Zed and go to **Extensions** (`Cmd+Shift+X`)
-2. Search for **Version 14**
-3. Click **Install**
-4. Open the Command Palette (`Cmd+Shift+P`) → **theme selector: Toggle**
-5. Select **Version 14 Dark**, **Version 14 Black**, or **Version 14 Light**
+1. Open Zed and go to **Extensions** (`Cmd+Shift+X`).
+2. Search for **Version 14** and click **Install**.
+3. Open the Command Palette (`Cmd+Shift+P`) and run **theme selector: Toggle**.
+4. Select **Version 14 Dark**, **Version 14 Black**, or **Version 14 Light**.
 
 ## Color Palette
 
@@ -67,10 +66,15 @@ A clean dark and light theme for [Zed](https://zed.dev), built around the **Vers
 | Errors | `#B91A25` |
 | Comments | `#636870` |
 
-## Also available for VS Code and Neovim
+## Also available for
 
-- [VS Code extension](https://github.com/version14/vscode-theme)
-- [Neovim/Vim plugin](https://github.com/version14/version14.vim)
+- [VS Code](https://github.com/version14/vscode-theme)
+- [Neovim](https://github.com/version14/nvim-theme)
+- [Vim](https://github.com/version14/vim-theme)
+- [Ghostty](https://github.com/version14/ghostty-theme)
+- [Starship](https://github.com/version14/starship-theme)
+- [gh-dash](https://github.com/version14/gh-dash-theme)
+- [Atuin](https://github.com/version14/atuin-theme)
 
 ## License
 
