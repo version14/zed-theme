@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.4.1
+
+**Fix: Light theme regression from 0.4.0.** The regrade script that ported the new palette
+onto every theme key mechanically forced a handful of Light/Black-specific "off-palette"
+colors (custom one-off choices that never matched any of that variant's own theme colors to
+begin with) onto the new tier colors, breaking them:
+- **Light**: `editor.active_line.background` had become the new near-black text color at 80%
+  opacity — the current-cursor line rendered as a solid dark bar. Reverted to its original,
+  correct value (a light gray tint).
+- **Light**: `terminal.ansi.black` had become almost the same lightness as the background,
+  making default-black terminal text nearly invisible. Reverted to its original value.
+- **Light**: `element.hover` had become noticeably darker/heavier than intended for a hover
+  background. Reverted to its original value.
+- **Black**: `element.active`/`ghost_element.active` had become nearly indistinguishable from
+  the near-black background, making the "active" UI state effectively invisible. Reverted to
+  their original values.
+
+None of these five keys are part of `color-palette.md`'s documented grade (elevation ramp,
+text ramp, or the 5 accent roles) — they were bespoke per-variant choices the regrade
+shouldn't have touched. Everything the grade *does* cover (accent hue, elevation/text ramps,
+the Black/Light contrast fixes from 0.4.0) is unaffected by this patch.
+
 ## 0.4.0
 
 **Accent color changed (placeholder):** the signature lime-green accent (`#D2FF3A`) is

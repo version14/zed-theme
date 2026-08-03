@@ -1,6 +1,6 @@
 id = "version14-theme"
 name = "Version 14"
-version = "0.4.0"
+version = "0.4.1"
 schema_version = 1
 authors = ["Mathieu Souflis <contact@mathieusouflis.com>"]
 description = "Dark, black, and light themes for Zed, inspired by the Version 14 brand palette."
