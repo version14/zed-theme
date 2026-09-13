@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.4.2
+
+**Terminal ANSI slots 0 and 8 corrected.** Both held elevation-ramp colours — `border` and `border.variant` — so anything the integrated terminal painted through them sat between 1.07:1 and 1.44:1 against the background and was effectively invisible. Shells lean on exactly these two slots: zsh-autosuggestions defaults to `fg=8`, and zsh-syntax-highlighting puts comments on slot 0.
+
+Both now take the text ramp, in all three variants:
+
+| Slot | Role | Dark | Black | Light |
+|---|---|---|---|---|
+| 0 `black` | `text.disabled` | `#4E5660` | `#4E5660` | `#999FA7` |
+| 8 `bright black` | `text.subtle` | `#6E737A` | `#6E737A` | `#636870` |
+
+`dim_black` follows slot 0. The other fourteen slots were already correct and are untouched. Light's slot 8 is `#636870` rather than the ramp's `#787E86`, matching the value the rest of the Version 14 suite already uses for light secondary text.
+
+**Light `players[0..5].selection` repaired.** A player's selection is meant to be its own cursor colour with an alpha — the rule Dark already followed, and which `[6]` and `[7]` followed in Light. The other six had kept pre-0.4.0 values, including two lime greens (`#4D6B00`, `#5C6C00`) left over from the retired accent, so light-mode editor selection rendered olive beneath a violet cursor. `players[7].selection` in Dark and Black also picked up its own cursor colour, retiring an off-ramp `#5B6068`.
+
+No editor UI colours changed in this release.
+
 ## 0.4.1
 
 Fixed a regression from 0.4.0 in five keys that were never part of the documented palette grade and should not have changed:
