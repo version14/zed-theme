@@ -1,0 +1,36 @@
+name: Check Version 14 tokens
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this theme
+        uses: actions/checkout@v4
+        with:
+          path: repos/${{ github.event.repository.name }}
+
+      - name: Check out shared tokens
+        uses: actions/checkout@v4
+        with:
+          repository: version14/tokens
+          ref: main
+          path: tokens
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verify generated files
+        run: python tokens/generate.py --themes-root repos --check
+
