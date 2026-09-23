@@ -2,6 +2,10 @@
 
 A dark and light theme for [Zed](https://zed.dev), built around the Version 14 brand palette: high contrast accents on deep neutrals.
 
+## Palette source
+
+The shared semantic colors are maintained in [version14/tokens](https://github.com/version14/tokens). This repository keeps Zed-native generated files.
+
 ## Variants
 
 | Variant | Description |
