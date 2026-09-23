@@ -3,6 +3,8 @@ name: Check Version 14 tokens
 on:
   push:
   pull_request:
+  repository_dispatch:
+    types: [version14-tokens-updated]
   schedule:
     - cron: "17 6 * * 1"
   workflow_dispatch:
@@ -34,3 +36,13 @@ jobs:
       - name: Verify generated files
         run: python tokens/generate.py --themes-root repos --check
 
+      - name: Explain token drift
+        if: ${{ failure() }}
+        run: |
+          {
+            echo "## Version 14 token check failed"
+            echo
+            echo "One or more generated theme files differ from version14/tokens."
+            echo 'Run `python tokens/generate.py --themes-root repos --write`, review the changes, and commit them.'
+            echo "For an intentional Helix palette exception, use a version14-override comment on the assignment."
+          } >> "$GITHUB_STEP_SUMMARY"
