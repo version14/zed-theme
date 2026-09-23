@@ -75,6 +75,7 @@ A dark and light theme for [Zed](https://zed.dev), built around the Version 14 b
 - [Starship](https://github.com/version14/starship-theme)
 - [gh-dash](https://github.com/version14/gh-dash-theme)
 - [Atuin](https://github.com/version14/atuin-theme)
+- [Helix](https://github.com/version14/helix-theme)
 
 ## License
 
